@@ -1,0 +1,22 @@
+
+    <div class="container margin">
+      <div class="row">
+      <div class="pull-right">
+        <h2>Search Image</h2>
+        <form >
+          <input type="search"  (keyup)="search($event.target.value)">
+        </form>
+      </div>
+        <div class="btn btn-primary pull-left top" >
+         <button   routerLink ="/favImages" mat-button  mat-dialog-close class="btn btn-primary searchButton" type="button">Go to Favourites</button>
+      </div>
+    </div>
+
+        <div class="row">
+        <div class ="col-md-2 mydivouter" *ngFor = "let image of response; let i=index;" >
+        <img src='{{image.urls.small}}' style="height:200px; width:200px;"/>
+        <input type="button" class="mybuttonoverlap btn btn-info" (click)="addSelected(i)" value="Add Favourite"/>
+        <a target="_blank" href="{{image.user.links.html}}" class="authoroverlap">Go to Author Page</a>
+      </div>
+        </div>
+        </div>

@@ -1,0 +1,50 @@
+
+    .box:hover
+    {
+        opacity:0.3;
+    }
+    .margin{
+        margin-top:10px;
+    }
+    .top{
+        margin-top:20px;
+    }
+    .mydivouter{
+margin-left:15px;
+margin-bottom:5px;
+background-color: rgb(230, 230, 230);
+    }
+    /* .mydivouter{
+position:relative;
+background: #f90;
+width: 200px;
+height: 120px;
+margin: 0 auto;
+} */
+/* .mydivoverlap{
+position: relative;
+z-index: 1;
+} */
+.mybuttonoverlap{
+position: absolute;
+z-index: 2;
+top: 44px;
+display: none;
+left: 59px;	
+}
+.mydivouter:hover .mybuttonoverlap{ 
+display:block;
+}
+
+.authoroverlap{
+    position: absolute;
+    z-index: 2;
+    top: 160px;
+    display: none;
+    left: 59px;	
+    color:white;
+    background-color: red;
+}
+.mydivouter:hover .authoroverlap{ 
+        display:block;
+}

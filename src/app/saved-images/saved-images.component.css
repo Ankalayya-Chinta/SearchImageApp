@@ -1,0 +1,61 @@
+.imgmargin{
+    margin:2px;
+}
+
+.cell {
+  border: 2px solid transparent;
+  padding: 5px 2px;
+  width: 20%;
+  height: 100%;
+  cursor: pointer;
+  border: 0px dashed #c8c8c8;
+}
+
+
+.cellInput {
+  border: 2px solid transparent;
+  padding: 5px 2px;
+  width: 20%;
+  height: 100%;
+}
+
+
+.box:hover
+{
+    opacity:0.3;
+}
+.margin{
+    margin-top:10px;
+}
+.top{
+    margin-top:20px;
+}
+.mydivouter{
+margin-left:15px;
+margin-bottom:5px;
+background-color: rgb(230, 230, 230);
+}
+
+.mybuttonoverlap{
+position: absolute;
+z-index: 2;
+top: 44px;
+display: none;
+left: 59px;	
+}
+.mydivouter:hover .mybuttonoverlap{ 
+display:block;
+}
+
+.authoroverlap{
+position: absolute;
+z-index: 2;
+top: 160px;
+display: none;
+left: 59px;	
+color:white;
+background-color: red;
+}
+.mydivouter:hover .authoroverlap{ 
+    display:block;
+}

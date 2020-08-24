@@ -1,0 +1,32 @@
+<div class="btn btn-primary">
+    <button  routerLink ="/home" mat-button  mat-dialog-close class="btn btn-primary searchButton" type="button">Back to home</button>
+</div>
+
+    
+    <div *ngFor = "let displayImage of lists | keyvalue; let i=index;" (click) = "onSelect(displayImage.key,displayImage.value[0].description)">
+        <div *ngIf = "displayImage.key != ''">
+        
+        <h4 style="float: left; padding-left: 120px;padding-top: 5px;">Title: </h4>
+        <div *ngIf='!editModeTitle' (click)='editModeTitle=true' class='cell'>{{displayImage.key}}</div>
+        <input *ngIf='editModeTitle' (focusout)="saveTitle($event.target.value,displayImage.key)" (keydown.enter)='$event.target.blur()' [(ngModel)]='displayImage.key' class='cellInput' 
+        appAutofocus  (keydown.enter)='$event.target.blur()' (focusout)="editModeTitle=false"
+        style="float: left;">
+        <br/>
+        
+        <h4 style="float: left; padding-left: 120px;padding-top: 5px;">Description: </h4>
+        <div *ngIf='!editModeDesc' (click)='editModeDesc=true' class='cell'>{{displayImage.value[0].description}}</div>
+        
+        <input *ngIf='editModeDesc' (focusout)="saveDesc($event.target.value)" (keydown.enter)='$event.target.blur()' [(ngModel)]='displayImage.value[0].description' class='cellInput'
+        appAutofocus  (keydown.enter)='$event.target.blur()' (focusout)="editModeDesc=false"
+        style="float: left;">
+        <br/>
+        <div class="container margin">
+        <div class ="row">
+            <table style="border: 1px solid; border-color: black;">
+        <div class ="col-md-5 mydivouter" *ngFor = "let image of displayImage.value">
+                <img src='{{image.imageUrl}}' style="height:200px; width:200px;" (click)="downloadFav(image.imageUrl);"/>
+            </div></table>
+            </div>
+    </div>
+    </div>
+</div>

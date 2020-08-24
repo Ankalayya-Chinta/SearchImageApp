@@ -1,0 +1,30 @@
+<!-- <button type="button" mat-dialog-close class="pull-right">&times;</button>
+<div style=" margin-bottom:2px;" >
+    <button (click)="addSelected()" mat-button  mat-dialog-close class="searchButton" type="button">Add to Favorities</button>
+    </div> -->
+    <!-- <div style="width:250px;margin-bottom:10px">
+        <div><input type="radio"  name="group1" value="val1" label="List 1" (onClick)="onRadioBtnClick('List1')">Container 1</div>
+        <div><input type="radio" name="group1" value="val1" label="List 2" (onClick)="onRadioBtnClick('List2')">Container  2</div>
+    </div> -->
+    
+<!-- <div  style="background-color:rgb(179, 176, 176);">
+    <b>Author:</b>{{pageUrl}}
+<br/>
+<b>description</b>:{{imageName}}
+<br/>
+</div> -->
+<div *ngIf= "!showInput">
+    <h4>Add to existing Lists</h4>
+    <div  class="display:block" *ngFor="let list of favLists">
+        <a style="cursor:pointer;" mat-dialog-close (click)="addToExisting(list)">{{list}}</a>
+    </div>    
+</div>
+<hr/>
+
+<button *ngIf= "!showInput" mat-button class="addBtn btn btn-primary" type="button" (click)="addNewList()">Create List</button>
+<br/>
+<div *ngIf= "showInput">
+<input class="search" mat-input [(ngModel)]="listName" name="search"  placeholder="Enter List Name" required><br/><br/>
+<textarea class="search" mat-input [(ngModel)]="descName" name="search"  placeholder="Enter Description" required></textarea><br/><br/>
+<button mat-raised-button mat-dialog-close (click)="addToFavourities(listName,descName)" class="saveBtn btn btn-primary">Add</button>
+</div>
